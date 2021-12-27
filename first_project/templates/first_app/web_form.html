@@ -1,0 +1,17 @@
+{% extends 'first_app/base.html' %}
+{% load static %}
+    {% block title %} Add Webpage {% endblock %}
+
+{% block content %}
+
+  <h5>{{ msg }}</h5>
+  <a href="{% url 'first_app:index' %}"></a>
+  <div class="container">
+    <form action="{% url 'first_app:insert_webpage'%}" method="post">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <input type="submit" class="btn btn-primary" name="submit" value="submit">
+    </form>
+  </div>
+
+{% endblock %}

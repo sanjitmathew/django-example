@@ -1,0 +1,25 @@
+{% extends 'first_app/base.html' %}
+
+{% block title %} Log in Page {% endblock %}
+
+{% block content %}
+
+{{ msg }}
+<div class="container">
+
+  <form class="form" action="{% url 'first_app:user_login' %}" method="post">
+
+    {% csrf_token %}
+
+    <label for="username"> Username : </label>
+    <input type="text" name="username" value="">
+
+    <label for="password"> Password : </label>
+    <input type="password"  name="password" value="">
+
+    <input type="submit" name="submit" value="Log in">
+
+  </form>
+</div>
+
+{% endblock %}

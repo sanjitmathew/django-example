@@ -1,0 +1,14 @@
+{% extends 'first_app/base.html' %}
+{% load static %}
+    {% block title %} First App {% endblock %}
+
+{% block content %}
+    {{ msg }}
+    <h1> This is the index page of First App </h1>
+    <br> {{ django_var }}
+    <a href="{% url 'first_app:show_login' %}">Login</a>
+    <a href="{% url 'first_app:insert_webpage' %}">Insert Webpage</a>
+    <a href="{% url 'first_app:show_records' %}">View Records</a>
+    <img src="{% static 'first_app/images/sample_pic.jpg' %}" alt="oops">
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'first_app/base.html' %}
+{% load static %}
+    {% block title %} Access Records {% endblock %}
+
+{% block content %}
+
+<h1> Access Records</h1>
+<br>
+<h2>
+  <a href="{% url 'first_app:index' %}"> Home Page</a>
+</h2>
+<br>
+{% if records %}
+    <table class='table'>
+      <thead>
+        <th> Site Name</th>
+        <th> Access Date</th>
+      </thead>
+
+      {% for row in records %}
+        <tr>
+          <td>{{ row.name }}</td>
+          <td>{{ row.date }}</td>
+        </tr>
+      {% endfor %}
+
+
+    </table>
+{% else %}
+    <h2> No Records Found !!!!!!!!</h2>
+{% endif %}
+
+{% endblock %}
